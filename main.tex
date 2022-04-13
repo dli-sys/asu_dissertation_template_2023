@@ -1,0 +1,86 @@
+\documentclass[12pt,letterpaper]{report}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{afterpage}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsbsy}
+\usepackage{dcolumn,array}
+\usepackage{tocloft}
+\usepackage{asudis}
+\usepackage{relsize}
+\usepackage{epstopdf}
+\usepackage{cite}
+\usepackage{psfrag}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{stfloats}
+\usepackage{MnSymbol}
+\usepackage{mathtools}
+\usepackage{nomencl}
+\usepackage{caption}
+\usepackage[pageanchor,plainpages=false,pdfpagelabels,bookmarks,bookmarksnumbered]{hyperref}
+
+
+\usepackage{bm}
+\usepackage{chemformula}
+
+\usepackage{float}
+\usepackage{adjustbox}
+
+
+\setlength{\headheight}{15pt}
+
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
+\makenomenclature
+\begin{document}
+%-----------------------front matter
+\pagenumbering{roman}
+\title{Your title}
+\author{Your name}
+\degreeName{Doctor of Philosophy}
+\paperType{Dissertation}
+\defensemonth{Some month}
+\defenseyear{Some year}
+\gradmonth{May 4th}
+\gradyear{Some year}
+\chair{Your professor}
+\memberOne{Your professor}
+\memberTwo{Your professor}
+
+\maketitle
+\doublespace
+\include{body/abstract}
+\include{body/acknowledgment}
+\tableofcontents
+\addtocontents{toc}{~\hfill Page\par}
+\newpage
+
+
+\addcontentsline{toc}{part}{LIST OF FIGURES}
+\addtocontents{toc}{CHAPTER \par}
+\renewcommand{\cftlabel}{Figure}
+% This gets the headers for the LOF right on the first page.  Subsequent pages
+% are handled by the fancyhdr code in the asudis.sty file.
+\addtocontents{lof}{Figure~\hfill Page \par}
+\listoffigures
+
+%-----------------------body
+\doublespace
+\pagenumbering{arabic}
+
+\include{body/chapter1_intro}
+\include{body/chapter2_previousWork}
+\include{body/chapter3_previousResearch}
+\include{body/chapter3_researchPlan}
+\include{body/chapter5_timeline}
+\include{body/chapter4_conclusion}
+
+%  references and appendix
+{\singlespace
+\addcontentsline{toc}{part}{REFERENCES}
+\bibliographystyle{IEEEtran}
+\bibliography{bibliography.bib}}
+
+\end{document}
