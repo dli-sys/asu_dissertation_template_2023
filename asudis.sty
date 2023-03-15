@@ -80,7 +80,6 @@
   \vspace{\fiveblanklines}
   \begin{center}
     \singlespace
-    % If you are using this for prospectus, simply add prospectus after   \@paperType
 	A \@paperType\ Presented in Partial Fulfillment\\
 	of the Requirements for the Degree\\
 	\@degreeName
@@ -88,7 +87,7 @@
   \vspace{\tenblanklines}
   \begin{center}
     \singlespace
-    %Approved \@defensemonth\ \@defenseyear\ by the\\
+    Approved \@defensemonth\ \@defenseyear\ by the\\
     Graduate Supervisory Committee:\\
     \ \\
     \@chair,  Chair\\
@@ -201,10 +200,10 @@
 \renewcommand{\@cfttocstart}{ 
    \newgeometry{top=1.0in,hmargin=1.25in,height=9.0in,
    includehead,includefoot}%,showcrop,showframe}
-
    \doublespace
-   \pagestyle{plain}
-   \afterpage{\lhead{\cftlabel}\rhead{Page}}
+   \pagestyle{fancyplain}
+    \afterpage{\markboth{\normalfont Page}{\normalfont\cftlabel}\markright{\normalfont\cftlabel}}
+    % check: https://tex.stackexchange.com/questions/648840/fancy-header-not-quite-working
 }
 
 \renewcommand{\@cfttocfinish}{
@@ -307,10 +306,10 @@
 % Fix bibliography header.
 %
 \renewcommand\bibname{References}
-%\renewcommand\bibsection{
-%\begin{center}\uppercase\expandafter{\bibname}\vspace{1em}\end{center}
-%}
 
+\renewcommand\bibsection{
+\begin{center}\uppercase\expandafter{\bibname}\vspace{1em}\end{center}
+}
 %
 % Modify figure captions so that they print singlespace.
 %
@@ -318,7 +317,6 @@
   \singlespace
   {\textbf{#1:} #2\par}
 }
-
 %
 % Modify footnotes to be single spaced per footnote, double in between
 %
@@ -330,3 +328,5 @@
 
 \let\oldfn\footnote   %single space individual footnotes
 \renewcommand{\footnote}[1]{\singlespace\oldfn{#1}\doublespace}
+
+\fancyfoot[C]{ \thepage}

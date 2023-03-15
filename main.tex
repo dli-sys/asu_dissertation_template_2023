@@ -1,15 +1,12 @@
 \documentclass[12pt,letterpaper]{report}
+
+\usepackage[numbers]{natbib}
+% \usepackage[showframe]{geometry}
 \usepackage{geometry}
 \usepackage{fancyhdr}
-\usepackage{afterpage}
-\usepackage{graphicx}
-\usepackage{amsmath,amssymb,amsbsy}
-\usepackage{dcolumn,array}
-\usepackage{tocloft}
-\usepackage{asudis}
+\usepackage{layout}
+\usepackage[font=footnotesize,skip=2pt,]{caption}
 \usepackage{relsize}
-\usepackage{epstopdf}
-\usepackage{cite}
 \usepackage{psfrag}
 \usepackage{multirow}
 \usepackage{booktabs}
@@ -18,13 +15,18 @@
 \usepackage{MnSymbol}
 \usepackage{mathtools}
 \usepackage{nomencl}
-\usepackage{caption}
-\usepackage[pageanchor,plainpages=false,pdfpagelabels,bookmarks,bookmarksnumbered]{hyperref}
-
-
 \usepackage{bm}
 \usepackage{chemformula}
-
+\usepackage{float}
+\usepackage{afterpage}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsbsy}
+\usepackage{dcolumn,array}
+\usepackage{tocloft}
+\usepackage{asudis}
+\usepackage{adjustbox}
+\usepackage{bm}
+\usepackage{chemformula}
 \usepackage{float}
 \usepackage{adjustbox}
 
@@ -37,13 +39,15 @@
 \begin{document}
 %-----------------------front matter
 \pagenumbering{roman}
-\title{Your title}
+\title{Your title line 1
+\\ \ 
+Line 2}
 \author{Your name}
 \degreeName{Doctor of Philosophy}
 \paperType{Dissertation}
 \defensemonth{Some month}
 \defenseyear{Some year}
-\gradmonth{May 4th}
+\gradmonth{May}
 \gradyear{Some year}
 \chair{Your professor}
 \memberOne{Your professor}
@@ -51,21 +55,20 @@
 
 \maketitle
 \doublespace
-\include{body/abstract}
-\include{body/acknowledgment}
+\include{abstract}
+% \include{ack}
+
 \tableofcontents
 \addtocontents{toc}{~\hfill Page\par}
 \newpage
-
-
+\addcontentsline{toc}{part}{LIST OF TABLES}
+\listoftables
 \addcontentsline{toc}{part}{LIST OF FIGURES}
+\addtocontents{lot}{Table~\hfill Page \par}
 \addtocontents{toc}{CHAPTER \par}
-\renewcommand{\cftlabel}{Figure}
-% This gets the headers for the LOF right on the first page.  Subsequent pages
-% are handled by the fancyhdr code in the asudis.sty file.
 \addtocontents{lof}{Figure~\hfill Page \par}
 \listoffigures
-
+\newpage
 %-----------------------body
 \doublespace
 \pagenumbering{arabic}
@@ -80,7 +83,7 @@
 %  references and appendix
 {\singlespace
 \addcontentsline{toc}{part}{REFERENCES}
-\bibliographystyle{IEEEtran}
+\bibliographystyle{asudis}
 \bibliography{bibliography.bib}}
 
 \end{document}
