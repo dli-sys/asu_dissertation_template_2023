@@ -29,7 +29,7 @@
 \usepackage{float}
 \usepackage{adjustbox}
 \usepackage[pageanchor=true,plainpages=false,pdfpagelabels,bookmarks,bookmarksnumbered,hidelinks]{hyperref}
-
+\usepackage{times}
 \setlength{\headheight}{15pt}
 
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}
@@ -73,12 +73,12 @@ Line 2}
 \pagenumbering{arabic}
 
 \include{body/chapter1_intro}
-\include{body/chapter2_previousWork}
-\include{body/chapter3_previousResearch}
-\include{body/chapter3_researchPlan}
+\include{body/chapter2_previous}
+\include{body/chapter3_research}
 \include{body/chapter4_conclusion}
 
-%  references and appendix
+\include{body/appendix}
+
 {\singlespace
 \addcontentsline{toc}{part}{REFERENCES}
 \bibliographystyle{asudis}
