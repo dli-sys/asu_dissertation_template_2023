@@ -5,7 +5,10 @@
 \usepackage{geometry}
 \usepackage{fancyhdr}
 \usepackage{layout}
-\usepackage[font=footnotesize,skip=2pt,]{caption}
+\usepackage[font=footnotesize,skip=2pt]{caption}
+\usepackage{amsmath,amssymb,amsbsy}
+\usepackage{dcolumn,array}
+\usepackage{tocloft}
 \usepackage{relsize}
 \usepackage{psfrag}
 \usepackage{multirow}
@@ -20,16 +23,12 @@
 \usepackage{float}
 \usepackage{afterpage}
 \usepackage{graphicx}
-\usepackage{amsmath,amssymb,amsbsy}
-\usepackage{dcolumn,array}
-\usepackage{tocloft}
 \usepackage{asudis}
 \usepackage{adjustbox}
-\usepackage{bm}
 \usepackage{chemformula}
 \usepackage{float}
 \usepackage{adjustbox}
-
+\usepackage[pageanchor=true,plainpages=false,pdfpagelabels,bookmarks,bookmarksnumbered,hidelinks]{hyperref}
 
 \setlength{\headheight}{15pt}
 
@@ -47,7 +46,7 @@ Line 2}
 \paperType{Dissertation}
 \defensemonth{Some month}
 \defenseyear{Some year}
-\gradmonth{May}
+\gradmonth{Another Month}
 \gradyear{Some year}
 \chair{Your professor}
 \memberOne{Your professor}
@@ -55,8 +54,8 @@ Line 2}
 
 \maketitle
 \doublespace
-\include{abstract}
-% \include{ack}
+\include{body/abstract}
+\include{body/acknowledgment}
 
 \tableofcontents
 \addtocontents{toc}{~\hfill Page\par}
@@ -77,13 +76,12 @@ Line 2}
 \include{body/chapter2_previousWork}
 \include{body/chapter3_previousResearch}
 \include{body/chapter3_researchPlan}
-\include{body/chapter5_timeline}
 \include{body/chapter4_conclusion}
 
 %  references and appendix
 {\singlespace
 \addcontentsline{toc}{part}{REFERENCES}
 \bibliographystyle{asudis}
-\bibliography{bibliography.bib}}
+\bibliography{bibliography}}
 
 \end{document}
